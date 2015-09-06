@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="Calculo Rentabilidad de Ahorros">
+	    <meta name="author" content="Andrés Duarte M.">
+		<title>Calculo Rentabilidad de Ahorros</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-table.min.css" rel="stylesheet">
+		<link href="css/style.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<section class="input">
+				<div class="row">
+					<div class="col-md-8">
+						<h3>Calculo Rentabilidad de Ahorros</h3>
+						<hr />
+						<div id="alerta"></div>
+						<div class="break"></div>
+						<form>
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="inTxtCapital">Capital Inicial:</label><br>
+										<input type="text" name="inTxtCapital" id="inTxtCapital" value="200000" class="form-control max-width-lg">
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="inTxtAhorro">Monto ahorro:</label><br>
+										<input type="text" name="inTxtAhorro" id="inTxtAhorro" value="120000" class="form-control max-width-lg">
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<label for="inTxtR">% r:</label><br>
+										<input type="text" name="inTxtR" id="inTxtR" value="2" class="form-control max-width-sm">
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<label for="cmbMeses">Meses:</label><br>
+										<select class="form-control max-width-sm" name="cmbMeses" id="cmbMeses"></select>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<br>
+									<button type="button" id="btnCalcular" class="btn btn-primary pull-left" style="margin-top: 5px;" >Calcular</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+			</section>
+
+			<div class="break"></div>
+			<div class="row">				
+				<div class="col-md-8">
+					<div class="dropdown pull-left" style="margin-top: 10px;">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							Descargar
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a id="exportarCSV" href="#">CSV</a></li>
+							<li><a id="exportarXSL" href="#">EXCEL</a></li>
+						</ul>
+					</div>
+
+					<table  id="tblRentabilidad" 
+							data-toolbar="#toolbar" 
+							data-pagination="true"
+							data-show-columns="true">
+						<thead>
+							<tr>
+								<th class="cen" data-field="mes" data-sortable="true">Meses</th>
+								<th class="der" data-field="capitalInicial" data-sortable="true">Cap. Inicial</th>
+								<th class="cen" data-field="rMas1">1+r</th>
+								<th class="der" data-field="saldo" data-sortable="true">Saldo</th>
+								<th class="der" data-field="ahorroMes" data-sortable="true">Ahorro mes</th>
+								<th class="der" data-field="nuevoSaldoFinal" data-sortable="true">Saldo final</th>
+								<th class="der" data-field="difSaldoFinal" data-sortable="true">Diferencia</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+		</div>
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="js/html5shiv.js"></script>
+		  <script src="js/respond.min.js"></script>
+		<![endif]-->
+		<script src="js/libraries/util.js" type="text/javascript"></script>	
+		<script src="js/libraries/rentabilidad_ahorro.js" type="text/javascript"></script>	
+		<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="js/bootstrap-table.js" type="text/javascript"></script>
+		<script src="js/bootstrap-table-es-ES.js" type="text/javascript"></script>
+		<script src="js/tableExport/tableExport.js" type="text/javascript"></script>
+		<script src="js/tableExport/libs/FileSaver/FileSaver.min.js" type="text/javascript"></script>
+		<script src="js/pages/index.js" type="text/javascript"></script>		
+	</body>
+</html>

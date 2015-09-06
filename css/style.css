@@ -1,0 +1,6 @@
+.izq{ text-align: left; }
+.cen{ text-align: center; }
+.der{ text-align: right; }
+.break{ height: 20px; }
+section.input .max-width-lg{ max-width: 200px; }
+section.input .max-width-sm{ max-width: 70px; }
